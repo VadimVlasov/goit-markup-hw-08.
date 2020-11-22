@@ -1,0 +1,191 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  &-container {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.modal {
+  position: absolute;
+  min-width: 528px;
+  min-height: 581px;
+  background-color: $primary-white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: scale;
+  transform: scale(0.9) translate(-50% -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    height: 581px;
+    width: 528px;
+    box-sizing: border-box;
+  }
+  &-titel {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $primary-title-color;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+  &-form-data {
+    width: 448px;
+    height: 324px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 12px;
+  }
+  &-form-input {
+    width: 448px;
+    padding-left: 42px;
+    height: 40px;
+    margin-top: 4px;
+    color: $primary-title-color;
+  }
+  &:focus {
+    outline: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+    border-color: $accent-color;
+    background-color: $primary-white-color;
+  }
+  &-label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+
+    color: #757575;
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 15px;
+      outline: 1px solid $primary-title-color;
+      display: inline-block;
+      margin-right: 8px;
+    }
+  }
+  &-form-svg-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+
+    .modal-form-input:focus + & {
+      fill: $accent-color;
+    }
+  }
+  &-form-field {
+    margin-bottom: 4px;
+  }
+  &-form-policy {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px 1px 1px 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  & .backdrop.is-hidden & {
+    transform: scale(1) translate(-50% -50%);
+  }
+}
+
+.comment-input {
+  height: 120px;
+  padding-top: 12px;
+  padding-left: 16px;
+  margin-left: 0px;
+}
+.link-modal-policy {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: #2196f3;
+}
+
+.bnt-close-modal {
+  background: url("../images/close-black-18dp.svg") 50% 50% no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  display: block;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+.modal-form-policy:checked + .modal-label::before {
+  background-image: url("../images/icon-check.svg");
+  background-color: $accent-color;
+  width: 16px;
+  height: 15px;
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 10px;
+}
+.modal-form-input:focus + .modal-form-field,
+.modal-form-input:not(:placeholder-shown) + .modal-form-field {
+  transform: translateY(-50px);
+}
+.btn-submit {
+  margin-left: 164px;
+  margin-left: 124px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.subscribe-modal-form {
+  margin-left: 94px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 570px;
+}
+.email-subscribe {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  width: 295px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+}
